@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>基于github和hexo搭建简单博客</title>
-    <url>/SurfingCat/2020/06/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <url>/2020/06/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>做一个简单的记录</p>
 <h2 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h2><p>git<br>node 如果老旧版本不能安装hexo，使用命令升级，<a href="https://www.jianshu.com/p/bff222ca8ca8" target="_blank" rel="noopener">参考命令</a></p>
 <h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>注：很多步骤我已省略，若没能正确安装建议搜索相关教程<br>1、到<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git官网</a>，下载git安装包<br>2、详细安装过程<a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html" target="_blank" rel="noopener">参考</a>,这里就不赘述<br>3、访问<a href="https://github.com/" target="_blank" rel="noopener">github</a>,注册一个账号（如果已有账号跳过这步）<br>4、到个人主页新建一个仓库，命名随意<br>5、新建完成后，绑定ssh公钥，生成公钥参考<a href="https://blog.csdn.net/zyydecsdn/article/details/79567305" target="_blank" rel="noopener">git生成ssh公钥</a>，查找公钥参考<a href="https://www.cnblogs.com/surfingcat/p/12929975.html" target="_blank" rel="noopener">git查看本机ssh公钥</a>（如果已绑定shh公钥跳过这步）<br>6、打开仓库=&gt;Ssettings=&gt;Options(往下翻)=&gt;GitHub Pages=&gt;Source=&gt;选择master或者你要展示的分支，完成后刷新同一位置可以看到类型于下面的提示就完成了</p>
