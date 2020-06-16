@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>基于github和hexo搭建简单博客</title>
+    <url>/2020/06/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>做一个简单的记录</p>
+<h2 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h2><p>git<br>node 如果老旧版本不能安装hexo，使用命令升级，<a href="https://www.jianshu.com/p/bff222ca8ca8" target="_blank" rel="noopener">参考命令</a></p>
+<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>注：很多步骤我已省略，若没能正确安装建议搜索相关教程<br>1、到<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git官网</a>，下载git安装包<br>2、详细安装过程<a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html" target="_blank" rel="noopener">参考</a>,这里就不赘述<br>3、访问<a href="https://github.com/" target="_blank" rel="noopener">github</a>,注册一个账号（如果已有账号跳过这步）<br>4、到个人主页新建一个仓库，命名随意<br>5、新建完成后，绑定ssh公钥，生成公钥参考<a href="https://blog.csdn.net/zyydecsdn/article/details/79567305" target="_blank" rel="noopener">git生成ssh公钥</a>，查找公钥参考<a href="https://www.cnblogs.com/surfingcat/p/12929975.html" target="_blank" rel="noopener">git查看本机ssh公钥</a>（如果已绑定shh公钥跳过这步）<br>6、打开仓库=&gt;Ssettings=&gt;Options(往下翻)=&gt;GitHub Pages=&gt;Source=&gt;选择master或者你要展示的分支，完成后刷新同一位置可以看到类型于下面的提示就完成了</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Your site is published at https:&#x2F;&#x2F;jarryk.github.io&#x2F;SurfingCat&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="配置node"><a href="#配置node" class="headerlink" title="配置node"></a>配置node</h3><p>到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node官网下载</a>安装包进行安装，<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装参考</a><br>验证是否安装配置成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><pre><code>npm install -g hexo-cli</code></pre><h3 id="安装cnpm（可选）"><a href="#安装cnpm（可选）" class="headerlink" title="安装cnpm（可选）"></a>安装cnpm（可选）</h3><p>若下载时间过长建议使用cnpm代理，cnpm安装命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>完成后使用cnpm -v ，检测是否正常，</p>
+<h3 id="安装hexo-1"><a href="#安装hexo-1" class="headerlink" title="安装hexo"></a>安装hexo</h3><pre><code>cnpm install -g hexo-cli</code></pre><p>安装完成后新建一个文件夹，命名随意，用来解压初始化hexo程序，在该文件下使用命令<br>    hexo init</p>
+<h3 id="然后使用命令"><a href="#然后使用命令" class="headerlink" title="然后使用命令"></a>然后使用命令</h3><pre><code>hexo g # 生成
+hexo s # 启动服务</code></pre><p>执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是要提交到github去的，hexo s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>)就可以看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为4000这个端口太常见了，解决端口冲突问题请参考这篇文章<a href="https://www.cnblogs.com/badbadboyyx/p/11957631.html" target="_blank" rel="noopener">解决端口被占用问题</a><br>第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑，可以去官方提供的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题下载页面</a>下载</p>
+<h3 id="直接访问主题的git仓库clone主题，这里以我用的为例子"><a href="#直接访问主题的git仓库clone主题，这里以我用的为例子" class="headerlink" title="直接访问主题的git仓库clone主题，这里以我用的为例子"></a>直接访问主题的git仓库clone主题，这里以我用的为例子</h3><pre><code>git clone  git@github.com:theme-next/hexo-theme-next.git  </code></pre><p>建议在这个hexo的根目录，也就是之前创建的用来装hexo的文件夹下面使用以下命令，把主题安装到hexo目录下的theme文件夹中方便管理</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span>  git@github.com:theme-next/hexo-theme-next.git  theme/next</span><br></pre></td></tr></table></figure>
+<p>切换主题，打开hexo根目录下的_congfog.yml文件，将里面的theme的配置换成stun<br>然后再执行一般 hexo g,有时候不行就执行hexo clean 再执行hexo g</p>
+<h3 id="配置hexo中git仓库地址，其他详细配置参考【hexo】03config文件配置详解"><a href="#配置hexo中git仓库地址，其他详细配置参考【hexo】03config文件配置详解" class="headerlink" title="配置hexo中git仓库地址，其他详细配置参考【hexo】03config文件配置详解"></a>配置hexo中git仓库地址，其他详细配置参考<a href="https://blog.csdn.net/a1335289286/article/details/79334793" target="_blank" rel="noopener">【hexo】03config文件配置详解</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  	<span class="built_in">type</span>: git</span><br><span class="line">  	repository: 之前创建的仓库地址</span><br><span class="line">  	branch: master</span><br></pre></td></tr></table></figure>
+<p>配置完成后还需执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>最后就是提交文件到仓库了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p> 至此一个简单的搭建流程就完成了，希望对你有所帮助<br>其他链接：<br>git官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a><br>hexo官网： <a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io/</a><br>github官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>node官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+</search>
