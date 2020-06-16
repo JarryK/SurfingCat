@@ -27,8 +27,8 @@ hexo s # 启动服务</code></pre><p>执行以上命令之后，hexo就会在pub
 <p> 至此一个简单的搭建流程就完成了，希望对你有所帮助<br>其他链接：<br>git官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a><br>hexo官网： <a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io/</a><br>github官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>node官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
         <category>教程</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>学习</tag>
