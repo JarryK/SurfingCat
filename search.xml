@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Cisco VPN连接失败442问题解决</title>
+    <url>/2020/06/20/cisco_error/</url>
+    <content><![CDATA[<h2 id="最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决"><a href="#最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决" class="headerlink" title="最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决"></a>最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决</h2><p>以下介绍均基于下图软件版本<br><img src="https://s1.ax1x.com/2020/06/20/NQH8dP.png" alt=""></p>
+<h1 id="442错误"><a href="#442错误" class="headerlink" title="442错误"></a>442错误</h1><p><img src="https://s1.ax1x.com/2020/06/20/NQHjOA.png" alt="图是网上找的，难得复现"></p>
+<p>解决办法1：操作系统开启了ICS(全称Internet Connection Sharing)服务，该服务与Cisco VPN服务产生了冲突。首先在系统服务中关闭ICS服务，并将其设为禁用，然后设置Cisco VPN服务为自动并将其启动。</p>
+<p>解决办法2：进入注册表regedit<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CVirtA找到DisplayName，<br>x86系统的将值”@oem16.inf,%CVirtA_Desc%;Cisco Systems VPN Adapter” 更改为”Cisco Systems VPN Adapter”<br>x64系统的将值 “@oem16.inf,%CVirtA_Desc%;Cisco Systems VPN Adapter for 64-bit Windows”更改为”Cisco Systems VPN Adapter for 64-bit Windows”</p>
+<h1 id="这是通常的解决办法，如果能解决就不用看后面的了"><a href="#这是通常的解决办法，如果能解决就不用看后面的了" class="headerlink" title="这是通常的解决办法，如果能解决就不用看后面的了"></a>这是通常的解决办法，如果能解决就不用看后面的了</h1><p><img src="https://s1.ax1x.com/2020/06/20/NQLAZn.png" alt=""><br>还有可能是这个服务和Cisco Systems, Inc. VPN Service这个服务冲突，关闭这个服务就可以了，某些时候无法启动客户端也有可能是这个服务造成的，我是win10中文家庭版1909版本的</p>
+]]></content>
+      <categories>
+        <category>解决问题</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>解决问题</tag>
+        <tag>Cisco</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于github和hexo搭建简单博客</title>
     <url>/2020/06/15/setup/</url>
     <content><![CDATA[<p>做一个简单的记录</p>
@@ -34,24 +52,6 @@ hexo s # 启动服务</code></pre><p>执行以上命令之后，hexo就会在pub
         <tag>学习</tag>
         <tag>教程</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cisco VPN连接失败442问题解决</title>
-    <url>/2020/06/20/cisco_error/</url>
-    <content><![CDATA[<h2 id="最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决"><a href="#最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决" class="headerlink" title="最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决"></a>最近在家远程办公，使用了一个vpn软件，有时候会出现一些问题，在网上找了些解决方式很多都差不多，最后还是以无意间找到的方式解决</h2><p>以下介绍均基于下图软件版本<br><img src="https://s1.ax1x.com/2020/06/20/NQH8dP.png" alt=""></p>
-<h1 id="442错误"><a href="#442错误" class="headerlink" title="442错误"></a>442错误</h1><p><img src="https://s1.ax1x.com/2020/06/20/NQHjOA.png" alt="图是网上找的，难得复现"></p>
-<p>解决办法1：操作系统开启了ICS(全称Internet Connection Sharing)服务，该服务与Cisco VPN服务产生了冲突。首先在系统服务中关闭ICS服务，并将其设为禁用，然后设置Cisco VPN服务为自动并将其启动。</p>
-<p>解决办法2：进入注册表regedit<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CVirtA找到DisplayName，<br>x86系统的将值”@oem16.inf,%CVirtA_Desc%;Cisco Systems VPN Adapter” 更改为”Cisco Systems VPN Adapter”<br>x64系统的将值 “@oem16.inf,%CVirtA_Desc%;Cisco Systems VPN Adapter for 64-bit Windows”更改为”Cisco Systems VPN Adapter for 64-bit Windows”</p>
-<h1 id="这是通常的解决办法，如果能解决就不用看后面的了"><a href="#这是通常的解决办法，如果能解决就不用看后面的了" class="headerlink" title="这是通常的解决办法，如果能解决就不用看后面的了"></a>这是通常的解决办法，如果能解决就不用看后面的了</h1><p><img src="https://s1.ax1x.com/2020/06/20/NQLAZn.png" alt=""><br>还有可能是这个服务和Cisco Systems, Inc. VPN Service这个服务冲突，关闭这个服务就可以了，某些时候无法启动客户端也有可能是这个服务造成的，我是win10中文家庭版1909版本的</p>
-]]></content>
-      <categories>
-        <category>解决问题</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>解决问题</tag>
-        <tag>Cisco</tag>
       </tags>
   </entry>
 </search>

@@ -748,6 +748,9 @@ const addPostOutdateNotice = function () {
   }
 }
 
+$('.dujintang').parent().off('click').on('click',function(){
+      eToy.getDujitang();
+    });
 /**
  * lazyload
  */
